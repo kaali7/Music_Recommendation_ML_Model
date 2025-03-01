@@ -106,7 +106,7 @@
 
         // Load CSV file
         function loadSongs() {
-            fetch('/static/data/songs.csv')
+            fetch('/static/data/songs_artist.csv')
                 .then(response => response.text())
                 .then(data => {
                     let rows = data.split("\n").slice(1); // Remove header
