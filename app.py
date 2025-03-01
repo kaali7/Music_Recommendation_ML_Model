@@ -1,47 +1,51 @@
-from flask import Flask, render_template, jsonify, request
-import json
-import random  # For demo purposes, replace with actual recommendation logic later
+from flask import Flask, render_template, request, jsonify
+import pickle
+import pandas as pd
+
 
 app = Flask(__name__)
 
-# Sample music database (replace with actual database later)
-SAMPLE_SONGS = [
-    {"id": 1, "name": "Bohemian Rhapsody", "artist": "Queen", "genre": "Rock", "image": "/static/images/placeholder.jpg"},
-    {"id": 2, "name": "Billie Jean", "artist": "Michael Jackson", "genre": "Pop", "image": "/static/images/placeholder.jpg"},
-    {"id": 3, "name": "Sweet Child O' Mine", "artist": "Guns N' Roses", "genre": "Rock", "image": "/static/images/placeholder.jpg"},
-    {"id": 4, "name": "Shape of You", "artist": "Ed Sheeran", "genre": "Pop", "image": "/static/images/placeholder.jpg"},
-    {"id": 5, "name": "Stairway to Heaven", "artist": "Led Zeppelin", "genre": "Rock", "image": "/static/images/placeholder.jpg"},
-]
+class music_Data:
+    def __init__(self, songs):
 
-@app.route('/')
-def home():
-    return render_template('index.html')
 
-@app.route('/search', methods=['POST'])
-def search():
-    data = request.get_json()
-    song_name = data.get('song', '').lower()
-    artist_name = data.get('artist', '').lower()
-    genre = data.get('genre', '').lower()
+        # Recommendation Model
+        self.model = pickle.load(open('static/data/save_data_model_pkl_file/music_model.pkl', 'rb'))
+          
+        # Music Data     
+        self.songs = songs
     
-    # Simple search logic (replace with more sophisticated search later)
-    results = []
-    for song in SAMPLE_SONGS:
-        if (song_name in song['name'].lower() or 
-            artist_name in song['artist'].lower() or 
-            genre in song['genre'].lower()):
-            results.append(song)
+    def INdata(self):
+        df = pd.read_csv('static/data/Music Info.csv')
+        song_data = df['name'].unique().tolist()
+        if self.songs in self.song_data:
+            return True
+        else:
+            return False
+        
     
-    # Get recommendations (currently random, replace with actual recommendation logic)
-    recommendations = random.sample(
-        [s for s in SAMPLE_SONGS if s not in results],
-        min(6, len(SAMPLE_SONGS) - len(results))
-    )
-    
-    return jsonify({
-        'matches': results,
-        'recommendations': recommendations
-    })
+@app.route('/', methods=['POST', 'GET'])
+def index():
+
+    df = pd.read_csv('static/data/Music Info.csv')
+    select_song = df['name'].unique().tolist()
+
+    # working search engine
+    if request.method == 'POST':
+        song = request.form['song']
+        music = music_Data(song)
+
+        if music.INdata():
+            return render_template('index.html', message="Song found in dataset!")
+        else:
+            return render_template('index.html', message="Song not found!")
+
+    else:
+        return render_template('index.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html') 
 
 if __name__ == '__main__':
     app.run(debug=True)

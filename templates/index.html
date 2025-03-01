@@ -24,21 +24,20 @@
             -webkit-backdrop-filter: blur(15px);
             /* Safari support */
         }
-        
 
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-cover bg-center" style="background-image: url('file:///D:/sweety/melo/static/img/bg.png');">
+<body class="bg-cover bg-center" style="background-image: url('static/img/bg.png');">
     <div class="bg-black bg-opacity-50 min-h-screen">
-        
+
         <!-- top space -->
         <div class="flex h-5"></div>
 
         <!-- navbar section -->
-        <header class="glass-navbar flex items-center justify-between px-6 py-3 pt-3 mx-20 rounded-full h-12">
+        <header class="glass-navbar flex items-center justify-between px-10 py-3 pt-3 mx-20 rounded-full h-12">
 
             <!-- Left Side: Logo -->
             <div class="flex items-center space-x-3">
@@ -47,85 +46,103 @@
                     melo
                 </span>
             </div>
-            
+
 
             <!-- Center: Search Bar and Genre Dropdown -->
-            <div class="flex justify-center items-center space-x-6">
-                <input type="text" placeholder="Song Name" 
-                    class="w-60 px-6 py-2 text-sm rounded-full focus:outline-none bg-white bg-opacity-20 
+            <form action="/" method="post" class="flex justify-center items-center mt-4 space-x-6">
+
+                <input type="text" id="search-input" placeholder="Song Name" name="song" class="w-100 px-6 py-2 text-sm rounded-full focus:outline-none bg-white bg-opacity-20 
                     text-white placeholder-white focus:bg-opacity-30 hover:bg-opacity-30 transition 
                     duration-300 ease-in-out backdrop-blur-lg border border-white border-opacity-30">
-                
-                <input type="text" placeholder="Artist Name" 
-                    class="w-60 px-6 py-2 text-sm rounded-full focus:outline-none bg-white bg-opacity-20 
-                    text-white placeholder-white focus:bg-opacity-30 hover:bg-opacity-30 transition 
-                    duration-300 ease-in-out backdrop-blur-lg border border-white border-opacity-30">
-            
-                <select class="w-40 px-6 py-2 text-sm rounded-full focus:outline-none bg-white bg-opacity-20 
-                    text-white focus:bg-opacity-30 hover:bg-opacity-30 transition duration-300 ease-in-out 
-                    backdrop-blur-lg border border-white border-opacity-30">
-                    <option>Genre</option>
-                </select>
-            
-                <button class="px-3 py-2 text-sm rounded-full bg-white bg-opacity-20 text-white 
+
+                <button type="submit" class="px-3 py-2 text-sm rounded-full bg-white bg-opacity-20 text-white 
                     focus:outline-none hover:bg-opacity-40 hover:scale-105 transform transition duration-300 
                     ease-in-out backdrop-blur-lg border border-white border-opacity-30">
                     <i class="fas fa-search"></i>
                 </button>
-            </div>
-            
+            </form>
+
 
             <!-- Right Side: Sun Icon (Theme Toggle) -->
             <div>
-                <button class="px-4 py-2 rounded-full bg-white bg-opacity-20 text-white focus:outline-none">
-                    <i class="fas fa-sun"></i>
-                </button>
-                <button class="px-4 py-2 rounded-full bg-white bg-opacity-20 text-white focus:outline-none">
-                    <i class="fas fa-info-circle"></i>
+                <button action="/about"
+                    class="px-4 py-2 rounded-full bg-white bg-opacity-20 text-white focus:outline-none">
+                    <a href="/about" class="fas fa-info-circle"></a>
                 </button>
             </div>
         </header>
 
-        <!-- music section -->
-        <main class="flex flex-col items-center p-4 space-y-6 relative">
+        <!-- Music Section -->
+        <main class="relative flex flex-col items-center p-4 space-y-6 z-0">
+            <div class="relative p-6 rounded-lg text-white w-48 h-48 flex flex-col justify-between 
+            transition-transform transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50"
+                style="background: linear-gradient(to right, rgba(128, 0, 128, 0.3), rgba(255, 165, 0, 0.3)); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);">
 
-                <div class="relative p-6 rounded-lg text-white w-48 h-48 flex flex-col justify-between 
-                    transition-transform transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50">
-
-                    <!-- Frosted Glass Effect -->
-                    <div class="absolute inset-0 rounded-lg" style="background: linear-gradient(to right, rgba(128, 0, 128, 0.3), rgba(255, 165, 0, 0.3)); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);"></div>
-            
-                    <!-- Content (On Top of Blur) -->
-                    <div class="relative z-10">
-                        <h3 class="font-bold text-lg text-left" style="font-family: 'Pacifico', cursive;">NAME OF SONG</h3>
-                        <p class="text-left text-sm opacity-80">Artist Name</p>
-                    </div>
-                    
-                    <hr class="relative z-10 border-t-2 border-white opacity-50">
-                    
-                    <button class="self-center transition-transform transform hover:scale-110 relative z-10">
-                        <i class="fas fa-play-circle text-2xl"></i>
-                    </button>
-                    
-                    <button class="mt-2 bg-white text-purple-500 px-3 py-1 rounded-full text-sm font-semibold 
-                        hover:bg-purple-500 hover:text-white transition-all relative z-10">
-                        Show More
-                    </button>
+                <!-- Content (On Top of Blur) -->
+                <div class="relative z-10">
+                    <h3 class="font-bold text-lg text-left" style="font-family: 'Pacifico', cursive;">NAME OF SONG</h3>
+                    <p class="text-left text-sm opacity-80">Artist Name</p>
                 </div>
-            
+
+                <hr class="relative z-10 border-t-2 border-white opacity-50">
+
+                <button class="self-center transition-transform transform hover:scale-110 relative z-10">
+                    <i class="fas fa-play-circle text-2xl"></i>
+                </button>
+            </div>
         </main>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+        <!-- Floating Search Suggestions -->
+        <div id="suggestions" class="absolute top-14 left-1/2 transform -translate-x-1/2 w-60 bg-black bg-opacity-80 rounded-lg shadow-lg text-white 
+    hidden backdrop-blur-md border border-white border-opacity-20 overflow-hidden z-50">
+        </div>
+
+
+
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        let songList = [];
+
+        // Load CSV file
+        function loadSongs() {
+            fetch('/static/data/songs.csv')
+                .then(response => response.text())
+                .then(data => {
+                    let rows = data.split("\n").slice(1); // Remove header
+                    songList = rows.map(row => row.split(",")[0].trim()); // Extract song names
+                })
+                .catch(error => console.error("Error loading song data:", error));
+        }
+
+        $(document).ready(function () {
+            loadSongs(); // Load songs when the page loads
+
+            $("#search-input").on("input", function () {
+                let query = $(this).val().trim().toLowerCase();
+                let suggestionBox = $("#suggestions");
+                suggestionBox.empty().hide();
+
+                if (query.length > 0) {
+                    let filteredSongs = songList.filter(song => song.toLowerCase().includes(query));
+
+                    if (filteredSongs.length > 0) {
+                        filteredSongs.slice(0, 10).forEach(song => {
+                            suggestionBox.append(`<div class='px-4 py-2 cursor-pointer hover:bg-gray-300' 
+                        onclick="selectSong('${song}')">${song}</div>`);
+                        });
+                        suggestionBox.show();
+                    }
+                }
+            });
+        });
+
+        function selectSong(song) {
+            $("#search-input").val(song);
+            $("#suggestions").hide();
+        }
+    </script>
+
 </body>
 
 </html>
