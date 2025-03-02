@@ -50,7 +50,7 @@ class music_Data:
         #get the song name , artist name, genre 
         recommended_songs = [self.songs_data.loc[self.songs_data['name'] == song] for song in recommended_songs]
 
-        df = pd.concat(recommended_songs)
+        df = pd.concat(recommended_songs).to_dict(orient='records')
 
         return df
 
@@ -66,12 +66,14 @@ def index():
             print("Song found in dataset!")
             recommended_songs = music.Reccomedation()
             print("Recommended songs:", recommended_songs)
-            return render_template('index.html', message="Song found!", recommendations=recommended_songs)
+            return render_template('index.html', message="Song found!", recommendations=recommended_songs, pos=1)
         else:
             print("Song not found!")
-            return render_template('index.html', message="Song not found!")
-
-    return render_template('index.html')
+            other_random_list = music.songs_data.sample(6).to_dict(orient='records')
+            return render_template('index.html', message="Song not found!" , pos=2)
+        
+    random_songs_list = pd.read_csv('static/data/songs_artist.csv').sample(12).to_dict(orient='records')
+    return render_template('index.html', songs=random_songs_list, pos=0)
 
 @app.route('/about')
 def about():

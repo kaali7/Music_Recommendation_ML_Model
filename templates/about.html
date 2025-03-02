@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,11 +18,12 @@
             background-color: rgba(0, 0, 0, 0.5);
             background-blend-mode: darken;
         }
+
         .container {
-            max-width: 1200px;
-            margin: 70px auto;
+            max-width: 1100px;
+            margin: 40px auto;
             background: linear-gradient(to right, rgba(128, 0, 128, 0.3), rgba(255, 165, 0, 0.3));
-            padding: 20px;
+            padding: 10px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
@@ -30,6 +32,7 @@
             text-align: left;
             position: relative;
         }
+
         .navbar {
             position: absolute;
             top: 10px;
@@ -39,41 +42,57 @@
             padding: 10px;
             border-radius: 200px;
         }
+
         .back-icon {
             font-size: 30px;
             color: #fff;
             text-decoration: none;
             margin-right: 10px;
         }
+
         .back-icon:hover {
             color: #ff8c00;
         }
+
         h1 {
-            color: #800080;
+            font-family: 'Pacifico', cursive;
+            font-weight: bold;
+            color: #dbc4db;
             margin-top: 60px;
             text-align: center;
         }
+
         p {
             font-size: 18px;
             line-height: 1.6;
             text-align: justify;
+            color: #dac1a2;
         }
+
         .highlight {
-            font-weight: bold;
-            color: #ff8c00;
+            color: #dea663;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <nav class="navbar">
             <a href="/" class="bi bi-arrow-left-circle back-icon"></a>
         </nav>
-        <h1>About Our Music Recommendation ML Model</h1>
-        <p>Our <span class="highlight">Music Recommendation System</span> uses advanced machine learning techniques to analyze user preferences and suggest songs that match their unique taste.</p>
-        <p>By leveraging <span class="highlight">deep learning</span> and <span class="highlight">collaborative filtering</span>, our model provides personalized recommendations that evolve with your listening habits.</p>
-        <p>Enjoy a seamless and intelligent way to discover new music, tailored just for you!</p>
+        <h1><i class="bi bi-music-note-beamed"></i> Music Recommendation ML Model <i class="bi bi-music-note-list"></i></h1>
+        <p>
+            This project is based on a subset of <span class="highlight">The Million Song Dataset</span>, integrating data from multiple sources such as <span class="highlight">Last.fm, Spotify, and The Echo Nest</span>. The dataset includes information on <span class="highlight">over 50,000 songs</span>, user listening history with nearly <span class="highlight">10 million records</span>, and <span class="highlight">1,500 MP3 examples</span> spanning <span class="highlight">15 genres</span> <i class="bi bi-headphones"></i>. The dataset features attributes such as <span class="highlight">track ID, song name, artist, genre, release year, duration</span>, and several <span class="highlight">audio characteristics</span> like <span class="highlight">danceability, energy, loudness, speechiness, and tempo</span> <i class="bi bi-music-player"></i>.
+        </p>
+        <p>
+            This web project was completed in <span class="highlight">five days</span>, during which I focused on learning <span class="highlight">web development from scratch</span> <i class="bi bi-laptop"></i>. While the <span class="highlight">model development</span> was relatively easy, the <span class="highlight">frontend development</span> was quite challenging. The project is built using <span class="highlight">Flask</span> for the backend, while the frontend utilizes <span class="highlight">HTML, CSS, Bootstrap, and JavaScript</span>. The recommendation system is powered by a <span class="highlight">machine learning model</span> using the <span class="highlight">Nearest Neighbors algorithm</span> from <span class="highlight">scikit-learn</span>, and it employs <span class="highlight">LabelEncoder</span> for processing categorical data <i class="bi bi-cpu"></i>. The application suggests <span class="highlight">songs based on their audio features</span>, enhancing user experience with <span class="highlight">music recommendations</span> <i class="bi bi-music-note"></i>.
+        </p>
+        <p>
+            I would like to acknowledge that I used several <span class="highlight">online tools</span>, including <span class="highlight">ChatGPT and Canvas</span>, especially for <span class="highlight">frontend development</span>. Learning <span class="highlight">frontend design</span> was tough, but I am improving <span class="highlight">step by step</span> <i class="bi bi-rocket"></i>. You can check out my project and <span class="highlight">provide feedback on GitHub</span>. Thank you for your support! <i class="bi bi-heart-fill"></i>
+        </p>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
