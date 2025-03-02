@@ -98,7 +98,9 @@ I don't lie; I used ChatGPT, Canvas, and other online tools, especially for fron
 ### Feedback & Repository
 
 You can check out my project and leave feedback on GitHub:
-**GitHub Repository**: [Link]
+**GitHub Repository**: [GitHub Link](https://github.com/kaali7/Music_Recommendation_ML_Model.git)
 
 Thank you for checking out my project! 🚀
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kali1479)
 
