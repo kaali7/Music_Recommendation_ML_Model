@@ -1,5 +1,44 @@
 # Million Song Dataset Web Project
 
+## How to Run the Flask Project
+
+### 1. Clone the Repository
+
+```sh
+git clone https://github.com/kaali7/Music_Recommendation_ML_Model.git
+cd Music_Recommendation_ML_Model
+```
+
+### 2. Create a Virtual Environment (Optional but Recommended)
+
+```sh
+python -m venv venv
+source venv/bin/activate  # On macOS/Linux
+venv\Scripts\activate    # On Windows
+```
+
+### 3. Install Dependencies
+
+```sh
+pip install -r requirements.txt
+```
+
+### 4. Run the Flask App
+
+```sh
+python app.py
+```
+
+### 5. Access the Web App
+
+Once the server is running, open a web browser and go to:
+
+```
+http://127.0.0.1:5000/
+```
+
+---
+
 ## About Dataset
 
 This project is based on a rebuilt version and subset of The Million Song Dataset. The dataset integrates multiple sources, including lastfm-spotify-tags-sim-userdata, The Echo Nest Taste Profile Subset, lastfm-dataset-2020, tagtraum genre annotations, and Spotify API.
@@ -85,6 +124,8 @@ def Reccomedation(self):
     return df
 ```
 
+---
+
 ### Dataset Reference:
 
 [Kaggle Dataset Link](https://www.kaggle.com/datasets/undefinenull/million-song-dataset-spotify-lastfm)
@@ -101,5 +142,6 @@ You can check out my project and leave feedback on GitHub:
 **GitHub Repository**: [GitHub Link](https://github.com/kaali7/Music_Recommendation_ML_Model.git)
 
 Thank you for checking out my project! 🚀
+
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kali1479)
