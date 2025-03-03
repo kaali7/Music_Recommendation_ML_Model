@@ -31,6 +31,7 @@ et-xmlfile==1.1.0
 exceptiongroup==1.2.2
 executing==0.10.0
 fastjsonschema==2.16.1
+filetype==1.2.0
 Flask==3.1.0
 flask-mysql-connector==1.1.0
 Flask-MySQLdb==2.0.0
@@ -68,11 +69,12 @@ jupyterlab==4.2.5
 jupyterlab-pygments==0.2.2
 jupyterlab-widgets==1.1.1
 jupyterlab_server==2.27.3
-Kivy==2.1.0
-kivy-deps.angle==0.3.2
+Kivy==2.3.1
+kivy-deps.angle==0.4.0
 kivy-deps.glew==0.3.1
-kivy-deps.sdl2==0.4.5
 Kivy-Garden==0.1.5
+kivy_deps.gstreamer==0.3.4
+kivy_deps.sdl2==0.8.0
 kivymd==0.104.2
 kiwisolver==1.4.4
 lxml==4.9.1
@@ -97,7 +99,7 @@ pandas==2.2.3
 pandocfilters==1.5.0
 parso==0.8.3
 pickleshare==0.7.5
-Pillow==9.1.1
+pillow==10.4.0
 platformdirs==4.2.2
 plyer==2.0.0
 prometheus-client==0.14.1
